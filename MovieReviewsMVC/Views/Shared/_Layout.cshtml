@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - ПОЗНАНИЕ</title>
+
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Secession+Bold+Alt+Caps&display=swap" rel="stylesheet" />
+
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Общие стили для меню и футера -->
+    <link rel="stylesheet" href="/css/layout.css" />
+
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+    <div class="site">
+        <!-- HEADER -->
+        <header class="site-header">
+            <div class="logo">ПОЗНАНИЕ</div>
+
+            <!-- Поиск (виден только на странице сериалов) -->
+            <div class="search-container" id="globalSearchContainer" style="display: none;">
+                <div class="search-wrapper">
+                    <input type="text" class="search-input" id="globalSearchInput" placeholder="Поиск сериалов..." autocomplete="off">
+                    <i class="fas fa-search search-icon"></i>
+                    <div class="search-suggestions" id="globalSearchSuggestions"></div>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a class="@(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" asp-controller="Pages" asp-action="Index">Главная</a></li>
+                    <li><a class="@(ViewContext.RouteData.Values["action"]?.ToString() == "CatalogFilm" ? "active" : "")" asp-controller="Pages" asp-action="CatalogFilm">Фильмы</a></li>
+                    <li><a class="@(ViewContext.RouteData.Values["action"]?.ToString() == "CatalogSerial" ? "active" : "")" asp-controller="Pages" asp-action="CatalogSerial">Сериалы</a></li>
+                    <li><a class="@(ViewContext.RouteData.Values["action"]?.ToString() == "Exclusive" ? "active" : "")" asp-controller="Pages" asp-action="Exclusive">Эксклюзивы</a></li>
+                    <li><a class="@(ViewContext.RouteData.Values["action"]?.ToString() == "CatalogActors" ? "active" : "")" asp-controller="Pages" asp-action="CatalogActors">Звезды</a></li>
+                    <li><a class="@(ViewContext.RouteData.Values["action"]?.ToString() == "About" ? "active" : "")" asp-controller="Pages" asp-action="About">О нас</a></li>
+                    <li><a class="@(ViewContext.RouteData.Values["action"]?.ToString() == "CatalogFavorites" ? "active" : "")" asp-controller="Pages" asp-action="CatalogFavorites">Избранное</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-col">
+                <p>ПОЗНАНИЕ</p>
+                <p>Ваш путеводитель в мире кино. Рецензии, новости, трейлеры и эксклюзивные материалы.</p>
+            </div>
+            <div class="footer-col">
+                <p>КОНТАКТЫ</p>
+                <p>info@poznanie.ru<br />+7 (495) 123-45-67<br />Москва, ул. Кинематографистов, 1</p>
+            </div>
+            <div class="footer-col">
+                <p>СОЦИАЛЬНЫЕ СЕТИ</p>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-vk"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Модальное окно для изображений -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <!-- Модальное окно для видео -->
+    <div id="videoModal" class="modal video-modal">
+        <span class="modal-close">&times;</span>
+        <div class="modal-video-container">
+            <iframe id="videoFrame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Основной JS -->
+    <script src="/js/index.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Скрипт для показа/скрытия поиска только на странице сериалов -->
+    <script>
+        // Показываем поиск только на странице сериалов
+        if (window.location.pathname.includes('/Pages/CatalogSerial') ||
+            window.location.pathname.includes('/catalog_serial')) {
+            var searchContainer = document.getElementById('globalSearchContainer');
+            if (searchContainer) searchContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

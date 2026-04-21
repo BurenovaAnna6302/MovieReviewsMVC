@@ -1,0 +1,230 @@
+﻿@{
+    ViewData["Title"] = "Самые известные звезды экрана - от актеров до режиссеров. ПОЗНАНИЕ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/catalog_actor.css" />
+}
+
+<!-- MAIN -->
+<main>
+    <div class="stars-list">
+        <p class="page-title">Звезды экрана</p>
+        <div class="stars-grid">
+
+            <div class="star-card">
+                <a href="@Url.Action("Actor", "Pages")">
+                    <img src="/img/депп.jpg" onerror="this.src='/img/placeholder.png';" alt="Джонни Депп" />
+                    <div class="star-content">
+                        <p class="title_content">Джонни Депп</p>
+                        <p class="star-desc">
+                            Американский актер, продюсер и музыкант. Известен эксцентричными ролями, особенно капитана Джека Воробья в «Пиратах Карибского моря». Трехкратный номинант на премию «Оскар».
+                        </p>
+                        <div class="star-meta">
+                            <p>Актер, Продюсер</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/дикаприо.jpg" onerror="this.src='/img/placeholder.png';" alt="Леонардо ДиКаприо" />
+                    <div class="star-content">
+                        <p class="title_content">Леонардо ДиКаприо</p>
+                        <p class="star-desc">
+                            Американский актер и продюсер, обладатель премии «Оскар». Известен ролями в фильмах «Титаник», «Волк с Уолл-стрит», «Выживший». Активный защитник окружающей среды и филантроп.
+                        </p>
+                        <div class="star-meta">
+                            <p>Актер, Продюсер</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/морго_робби.jpg" onerror="this.src='/img/placeholder.png';" alt="Марго Робби" />
+                    <div class="star-content">
+                        <p class="title_content">Марго Робби</p>
+                        <p class="star-desc">
+                            Австралийская актриса и продюсер. Стала известна после роли Харли Квинн в фильмах о Бэтмене. Основала собственную продюсерскую компанию. Номинантка на премию «Оскар».
+                        </p>
+                        <div class="star-meta">
+                            <p>Актриса, Продюсер</p>
+                            <p>Австралия</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/тарантино.jpg" onerror="this.src='/img/placeholder.png';" alt="Квентин Тарантино" />
+                    <div class="star-content">
+                        <p class="title_content">Квентин Тарантино</p>
+                        <p class="star-desc">
+                            Американский режиссер, сценарист и продюсер. Известен своими уникальными диалогами и нелинейными сюжетами. Двукратный обладатель «Оскара» за лучший оригинальный сценарий.
+                        </p>
+                        <div class="star-meta">
+                            <p>Режиссер, Сценарист</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/спилберг.jpg" onerror="this.src='/img/placeholder.png';" alt="Стивен Спилберг" />
+                    <div class="star-content">
+                        <p class="title_content">Стивен Спилберг</p>
+                        <p class="star-desc">
+                            Американский режиссер, продюсер и сценарист. Один из самых влиятельных кинематографистов в истории. Обладатель трех премий «Оскар». Создатель таких хитов как «Челюсти» и «Парк Юрского периода».
+                        </p>
+                        <div class="star-meta">
+                            <p>Режиссер, Продюсер</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/лоуренс.jpg" onerror="this.src='/img/placeholder.png';" alt="Дженифер Лоуренс" />
+                    <div class="star-content">
+                        <p class="title_content">Дженифер Лоуренс</p>
+                        <p class="star-desc">
+                            Американская актриса, самая молодая в истории обладательница премии «Оскар» за лучшую женскую роль. Прославилась благодаря франшизе «Голодные игры». Известна своим острым чувством юмора.
+                        </p>
+                        <div class="star-meta">
+                            <p>Актриса</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/редклиф.jpg" onerror="this.src='/img/placeholder.png';" alt="Дэниел Рэдклифф" />
+                    <div class="star-content">
+                        <p class="title_content">Дэниел Рэдклифф</p>
+                        <p class="star-desc">
+                            Британский актер, получивший мировую известность благодаря роли Гарри Поттера. После завершения франшизы успешно играет в независимом кино и театре. Известен своей скромностью.
+                        </p>
+                        <div class="star-meta">
+                            <p>Актер</p>
+                            <p>Великобритания</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/posters/гадот.jpg" onerror="this.src='/img/placeholder.png';" alt="Галь Гадот" />
+                    <div class="star-content">
+                        <p class="title_content">Галь Гадот</p>
+                        <p class="star-desc">
+                            Израильская актриса и модель. Бывшая Мисс Израиль. Получила мировую известность после роли Чудо-женщины в фильмах DC. До актерской карьеры служила в армии Израиля.
+                        </p>
+                        <div class="star-meta">
+                            <p>Актриса, Модель</p>
+                            <p>Израиль</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/скотт.jpg" onerror="this.src='/img/placeholder.png';" alt="Ридли Скотт" />
+                    <div class="star-content">
+                        <p class="title_content">Ридли Скотт</p>
+                        <p class="star-desc">
+                            Британский режиссер и продюсер. Создатель культовых фильмов «Чужой» и «Бегущий по лезвию». Известен своим визуальным стилем и вниманием к деталям. Обладатель множества наград.
+                        </p>
+                        <div class="star-meta">
+                            <p>Режиссер, Продюсер</p>
+                            <p>Великобритания</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/стрип.jpg" onerror="this.src='/img/placeholder.png';" alt="Мерил Стрип" />
+                    <div class="star-content">
+                        <p class="title_content">Мерил Стрип</p>
+                        <p class="star-desc">
+                            Американская актриса, рекордсмен по количеству номинаций на «Оскар». Известна своей невероятной способностью к перевоплощению. Считается одной из величайших актрис современности.
+                        </p>
+                        <div class="star-meta">
+                            <p>Актриса</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/кейдж.jpg" onerror="this.src='/img/placeholder.png';" alt="Николас Кейдж" />
+                    <div class="star-content">
+                        <p class="title_content">Николас Кейдж</p>
+                        <p class="star-desc">
+                            Американский актер и продюсер. Обладатель премии «Оскар» за роль в фильме «Покидая Лас-Вегас». Известен своей интенсивной актерской манерой и большим количеством ролей.
+                        </p>
+                        <div class="star-meta">
+                            <p>Актер, Продюсер</p>
+                            <p>США</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/нолан.jpg" onerror="this.src='/img/placeholder.png';" alt="Кристофер Нолан" />
+                    <div class="star-content">
+                        <p class="title_content">Кристофер Нолан</p>
+                        <p class="star-desc">
+                            Британский режиссер, сценарист и продюсер. Известен сложными сюжетами и нелинейным повествованием. Создатель трилогии о Бэтмене, «Начало», «Интерстеллар». Обладатель «Оскара».
+                        </p>
+                        <div class="star-meta">
+                            <p>Режиссер, Сценарист</p>
+                            <p>Великобритания</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="star-card">
+                <a href="#">
+                    <img src="/img/posters/бланшет.jpg" onerror="this.src='/img/placeholder.png';" alt="Кейт Бланшетт" />
+                    <div class="star-content">
+                        <p class="title_content">Кейт Бланшетт</p>
+                        <p class="star-desc">
+                            Австралийская актриса и театральный режиссер. Двукратная обладательница премии «Оскар». Известна ролями в фильмах «Авиатор», «Елизавета». Одна из самых уважаемых актрис своего поколения.
+                        </p>
+                        <div class="star-meta">
+                            <p>Актриса, Режиссер</p>
+                            <p>Австралия</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    
+}

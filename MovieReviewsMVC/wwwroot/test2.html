@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Тест 2</title>
+</head>
+<body>
+    <form id="testForm" enctype="multipart/form-data">
+        <input type="text" id="title" placeholder="Название" required><br>
+        <input type="file" id="file" required><br>
+        <button type="submit">Отправить</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('testForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const file = document.getElementById('file').files[0];
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/api/seriesapi/test', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+            } catch (err) {
+                document.getElementById('result').innerHTML = 'Ошибка: ' + err.message;
+            }
+        };
+    </script>
+</body>
+</html>

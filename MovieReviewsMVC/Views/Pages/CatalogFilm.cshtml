@@ -1,0 +1,263 @@
+﻿@{
+    ViewData["Title"] = "Фильмы - каталог новинок и обзор кино. ПОЗНАНИЕ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/catalog_film.css" />
+}
+
+<!-- MAIN -->
+<main>
+    <div class="page-container">
+        <aside class="filter-sort">
+            <div class="filters">
+                <p class="sort">Фильтры</p>
+                <button class="filter-btn">По жанру</button>
+                <button class="filter-btn">По языку</button>
+                <button class="filter-btn">По году</button>
+            </div>
+            <div class="sorting">
+                <p class="sort">Сортировка</p>
+                <button class="sort-btn">Сначала новые</button>
+                <button class="sort-btn">Сначала старые</button>
+                <button class="sort-btn">В алфавитном порядке</button>
+                <button class="sort-btn">Сначала короткие</button>
+                <button class="sort-btn">Лучшие</button>
+                <button class="sort-btn">Худшие</button>
+            </div>
+        </aside>
+
+        <div class="movies-list">
+            <p class="page-title">Фильмы</p>
+            <div class="movies-grid">
+
+                <div class="movie-card">
+                    <a href="@Url.Action("Film", "Pages")">
+                        <img src="/img/posters/дивергент.jpg" onerror="this.src='/img/placeholder.png';" alt="Дивергент" />
+                        <div class="movie-content">
+                            <p class="title_content">Дивергент</p>
+                            <p class="movie-desc">
+                                В будущем Чикаго общество разделено на фракции. Беатрис оказывается дивергентом - угрозой для системы. Ей приходится скрывать свою природу, чтобы выжить в мире, где быть другим смертельно опасно.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2014</p>
+                                <p>Жанр: Фантастика, Боевик</p>
+                                <p>Рейтинг: 6.8</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/posters/громовержцы.jpg" onerror="this.src='/img/placeholder.png';" alt="Громовержцы" />
+                        <div class="movie-content">
+                            <p class="title_content">Громовержцы</p>
+                            <p class="movie-desc">
+                                Команда бывших супергероев выполняет секретные миссии под руководством ЦРУ. Им поручено скрывать доказательства экспериментов, но задания становятся всё более аморальными, вызывая сомнения в истинных целях.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2025</p>
+                                <p>Жанр: Боевик, Фантастика</p>
+                                <p>Рейтинг: 7.2</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/posters/без_ответа.jpg" onerror="this.src='/img/placeholder.png';" alt="Без ответа" />
+                        <div class="movie-content">
+                            <p class="title_content">Без ответа</p>
+                            <p class="movie-desc">
+                                Обычный парень влюбляется в девушку, которая оказывается секретным агентом. Вместе они путешествуют по миру, пытаясь остановить международный заговор и спасти человечество от катастрофы.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2023</p>
+                                <p>Жанр: Комедия, Боевик</p>
+                                <p>Рейтинг: 6.3</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/posters/алладин.jpg" onerror="this.src='/img/placeholder.png';" alt="Алладин" />
+                        <div class="movie-content">
+                            <p class="title_content">Алладин</p>
+                            <p class="movie-desc">
+                                Уличный воришка находит волшебную лампу с джинном. Он хочет стать принцем ради любви принцессы, но коварный визирь стремится захватить лампу для установления тирании в королевстве.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2019</p>
+                                <p>Жанр: Мюзикл, Фэнтези</p>
+                                <p>Рейтинг: 7.3</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/posters/голодные_игры.jpg" onerror="this.src='/img/placeholder.png';" alt="Голодные игры: Сойка пересмешница" />
+                        <div class="movie-content">
+                            <p class="title_content">Голодные игры: Сойка пересмешница</p>
+                            <p class="movie-desc">
+                                После 75-х Игр Китнисс становится символом восстания против Капитолия. Как Сойка-пересмешница она должна вдохновить дистрикты на революцию, пока Президент Сноу пытается её уничтожить.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2014</p>
+                                <p>Жанр: Фантастика, Триллер</p>
+                                <p>Рейтинг: 6.3</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/posters/гарри_поттер_и_тайная_комната.jpg" onerror="this.src='/img/placeholder.png';" alt="Гарри Поттер и тайная комната" />
+                        <div class="movie-content">
+                            <p class="title_content">Гарри Поттер и тайная комната</p>
+                            <p class="movie-desc">
+                                На втором курсе в Хогвартсе открывается Тайная Комната. Ученики превращаются в камень, и Гарри подозревают в этом. Он должен найти настоящего наследника Слизерина и остановить древнее зло.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2002</p>
+                                <p>Жанр: Фэнтези, Приключения</p>
+                                <p>Рейтинг: 8.1</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/чудо_женщина.jpg" onerror="this.src='/img/placeholder.png';" alt="Чудо-женщина 1984" />
+                        <div class="movie-content">
+                            <p class="title_content">Чудо-женщина: 1984</p>
+                            <p class="movie-desc">
+                                Диана Принс сталкивается с древним артефактом, исполняющим желания. Она должна объединиться с новой знакомой и остановить предпринимателя, чьи амбиции могут привести к глобальной катастрофе.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2020</p>
+                                <p>Жанр: Фэнтези, Приключения</p>
+                                <p>Рейтинг: 5.4</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/чужой_завет.jpg" onerror="this.src='/img/placeholder.png';" alt="Чужой: Завет" />
+                        <div class="movie-content">
+                            <p class="title_content">Чужой: Завет</p>
+                            <p class="movie-desc">
+                                Колонисты обнаруживают неизведанную планету, которая оказывается смертельной ловушкой. Единственный выживший андроид скрывает ужасную правду о создании организма-убийцы, угрожающего человечеству.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2017</p>
+                                <p>Жанр: Фантастика, Ужасы</p>
+                                <p>Рейтинг: 6.4</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/смертельная_битва.jpg" onerror="this.src='/img/placeholder.png';" alt="Смертельная битва" />
+                        <div class="movie-content">
+                            <p class="title_content">Смертельная битва</p>
+                            <p class="movie-desc">
+                                Боец ММА присоединяется к команде опытных воинов для участия в смертельном турнире. Им предстоит сразиться с могущественными противниками и предотвратить захват Земли императором Внешнего мира.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2021</p>
+                                <p>Жанр: Экшн, Фэнтези</p>
+                                <p>Рейтинг: 6.1</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/после.jpg" onerror="this.src='/img/placeholder.png';" alt="После" />
+                        <div class="movie-content">
+                            <p class="title_content">После</p>
+                            <p class="movie-desc">
+                                Примерная студентка влюбляется в загадочного молодого человека. Их страстный роман сталкивается с испытаниями, когда открываются тёмные секреты прошлого, угрожающие разрушить их отношения.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2019</p>
+                                <p>Жанр: Мелодрама</p>
+                                <p>Рейтинг: 6.1</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/ученик_чародея.jpg" onerror="this.src='/img/placeholder.png';" alt="Ученик чародея" />
+                        <div class="movie-content">
+                            <p class="title_content">Ученик чародея</p>
+                            <p class="movie-desc">
+                                Студент становится учеником могущественного волшебника. Ему предстоит освоить магию, чтобы помочь победить злую колдунью, угрожающую современному Нью-Йорку, и спасти город от древнего зла.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2010</p>
+                                <p>Жанр: Фэнтези, Приключения</p>
+                                <p>Рейтинг: 6.9</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/posters/вниз.jpg" onerror="this.src='/img/placeholder.png';" alt="Вниз" />
+                        <div class="movie-content">
+                            <p class="title_content">Вниз</p>
+                            <p class="movie-desc">
+                                Пара оказывается в ловушке лифта с загадочным незнакомцем. Ситуация усугубляется, когда выясняется, что это не случайность, а тщательно спланированная ловушка с смертельной опасностью.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2025</p>
+                                <p>Жанр: Драма, Триллер</p>
+                                <p>Рейтинг: 5.5</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="movie-card">
+                    <a href="#">
+                        <img src="/img/мэр_поневоле.jpg" onerror="this.src='/img/placeholder.png';" alt="Мэр поневоле" />
+                        <div class="movie-content">
+                            <p class="title_content">Мэр поневоле</p>
+                            <p class="movie-desc">
+                                Бывшая танцовщица неожиданно становится мэром города после комы настоящего градоначальника. Используя харизму, она пытается навести порядок, сталкиваясь с коррупцией и бюрократией.
+                            </p>
+                            <div class="movie-meta">
+                                <p>Год: 2025</p>
+                                <p>Жанр: Комедия</p>
+                                <p>Рейтинг: 6.9</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+   
+}

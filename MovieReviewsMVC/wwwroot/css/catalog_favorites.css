@@ -1,0 +1,552 @@
+﻿/* catalog_favorites.css - ПОЛНЫЙ КОД ДЛЯ СТРАНИЦЫ ИЗБРАННОГО */
+
+/* Основные стили страницы */
+.page-container {
+    max-width: 1330px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Заголовок страницы */
+.page-title {
+    color: #0022FF;
+    font-size: 86px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -30px;
+    font-family: 'Domine', serif;
+}
+
+.favorites-description {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Сетка избранного */
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* КАРТОЧКА ИЗБРАННОГО - ТОЧНО КАК В КАТАЛОГЕ */
+.favorite-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 34, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+    height: 520px;
+    background-color: #1a1a1a;
+    animation: fadeIn 0.5s ease;
+}
+
+    .favorite-card:hover {
+        box-shadow: 0 6px 30px rgba(0, 34, 255, 0.7);
+    }
+
+    .favorite-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.7);
+        transition: filter 0.35s ease;
+    }
+
+    .favorite-card:hover img {
+        filter: brightness(0.9);
+    }
+
+/* Кнопка удаления - стилизуем под кнопку избранного из каталога */
+.remove-favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 30;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 18px;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.favorite-card:hover .remove-favorite-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.remove-favorite-btn:hover {
+    transform: scale(1.1) !important;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.remove-favorite-btn i {
+    pointer-events: none;
+    font-size: 18px;
+}
+
+/* Контент карточки - КАК В КАТАЛОГЕ */
+.favorite-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.title_content {
+    font-size: 34px;
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.favorite-card:hover .title_content {
+    transform: translateY(0);
+}
+
+/* Описание скрыто как в каталоге */
+.favorite-desc {
+    display: none;
+}
+
+/* Мета информация - ТОЧНО КАК В КАТАЛОГЕ */
+.favorite-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+    .favorite-meta p {
+        background: rgba(211, 6, 88, 0.4);
+        padding: 6px 8px;
+        border-radius: 10px;
+        width: fit-content;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    /* Убираем иконки из мета-информации */
+    .favorite-meta i {
+        display: none;
+    }
+
+/* Окно с доп информацией - КАК В КАТАЛОГЕ */
+.favorite-hover-card {
+    position: absolute;
+    bottom: 230px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px solid #0022FF;
+    border-radius: 15px;
+    padding: 20px;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 34, 255, 0.7);
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transform-origin: bottom center;
+}
+
+.favorite-card:hover .favorite-hover-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+}
+
+.hover-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+    .hover-rating i {
+        color: #ffd700;
+    }
+
+    .hover-rating span {
+        font-weight: 700;
+        color: #ffd700;
+    }
+
+.hover-description {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+    .hover-description::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .hover-description::-webkit-scrollbar-track {
+        background: #333;
+    }
+
+    .hover-description::-webkit-scrollbar-thumb {
+        background: #0022FF;
+        border-radius: 5px;
+    }
+
+.hover-cast {
+    font-size: 13px;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+    .hover-cast span {
+        color: #0022FF;
+        font-weight: 500;
+    }
+
+.hover-year {
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+/* Пустое состояние - ТОЛЬКО ТЕКСТ, БЕЗ ПРЯМОУГОЛЬНИКА */
+.empty-favorites {
+    text-align: center;
+    padding: 80px 20px;
+    color: #666;
+}
+
+    .empty-favorites i {
+        font-size: 80px;
+        color: #0022FF;
+        margin-bottom: 20px;
+        opacity: 0.5;
+    }
+
+    .empty-favorites h2 {
+        font-family: 'Domine', serif;
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .empty-favorites p {
+        color: #666;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+.btn-catalog {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #0022FF;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid #0022FF;
+}
+
+    .btn-catalog:hover {
+        background: transparent;
+        color: #0022FF;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 34, 255, 0.3);
+    }
+
+/* Загрузка и ошибки */
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: #0022FF;
+    font-size: 18px;
+    grid-column: 1 / -1;
+    font-weight: 600;
+}
+
+    .loading:after {
+        content: '...';
+        animation: dots 1.5s steps(4, end) infinite;
+    }
+
+.error {
+    text-align: center;
+    padding: 60px 20px;
+    color: #f44336;
+    font-size: 18px;
+    grid-column: 1 / -1;
+    font-weight: 600;
+}
+
+/* Уведомление - КАК В КАТАЛОГЕ */
+.favorite-toast {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background-color: #0022FF;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 34, 255, 0.5);
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2000;
+}
+
+    .favorite-toast.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .favorite-toast i {
+        font-size: 20px;
+        color: #ff4444;
+    }
+
+    .favorite-toast span {
+        font-weight: 500;
+    }
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes dots {
+    0%, 20% {
+        content: '.';
+    }
+
+    40% {
+        content: '..';
+    }
+
+    60%, 100% {
+        content: '...';
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .page-title {
+        font-size: 64px;
+    }
+
+    .favorites-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .title_content {
+        font-size: 28px;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+
+    .page-title {
+        font-size: 42px;
+        margin-top: 0;
+    }
+
+    .favorites-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .favorites-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .favorite-card {
+        height: 450px;
+    }
+
+        .favorite-card img {
+            height: 100%;
+        }
+
+    .title_content {
+        font-size: 24px;
+    }
+
+    .favorite-meta p {
+        font-size: 14px;
+    }
+
+    .remove-favorite-btn {
+        opacity: 1;
+        transform: scale(1);
+        width: 36px;
+        height: 36px;
+    }
+
+    .empty-favorites {
+        padding: 60px 20px;
+    }
+
+        .empty-favorites i {
+            font-size: 60px;
+        }
+
+        .empty-favorites h2 {
+            font-size: 24px;
+        }
+
+        .empty-favorites p {
+            font-size: 16px;
+        }
+
+    .btn-catalog {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+
+    .favorite-toast {
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        transform: translateY(-100px);
+        justify-content: center;
+    }
+
+        .favorite-toast.show {
+            transform: translateY(0);
+        }
+}
+
+/* Адаптивность для маленьких телефонов */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 32px;
+    }
+
+    .favorite-card {
+        height: 400px;
+    }
+
+    .favorite-content {
+        padding: 15px;
+    }
+
+    .title_content {
+        font-size: 20px;
+    }
+
+    .favorite-meta p {
+        font-size: 12px;
+    }
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0022FF;
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #0000cc;
+    }
+
+/* Дополнительные эффекты для карточек */
+.favorite-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 25;
+}
+
+.favorite-card:hover::before {
+    border-color: #0022FF;
+    box-shadow: inset 0 0 20px rgba(0, 34, 255, 0.3);
+}
+
+/* Стиль для пустого результата */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    color: #aaa;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 1px dashed #555;
+}

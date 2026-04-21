@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Тест загрузки</title>
+</head>
+<body>
+    <form method="post" action="/api/seriesapi/upload" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Название" required><br>
+        <input type="number" name="yearStart" placeholder="Год" required><br>
+        <input type="number" name="genreId" placeholder="ID жанра" required><br>
+        <input type="number" name="languageId" placeholder="ID языка" required><br>
+        <input type="text" name="cast" placeholder="Актёры" required><br>
+        <input type="number" step="0.1" name="rating" placeholder="Рейтинг" required><br>
+        <textarea name="shortDescription" placeholder="Краткое описание" required></textarea><br>
+        <textarea name="fullDescription" placeholder="Полное описание" required></textarea><br>
+        <input type="file" name="posterImage" required><br>
+        <button type="submit">Отправить</button>
+    </form>
+</body>
+</html>

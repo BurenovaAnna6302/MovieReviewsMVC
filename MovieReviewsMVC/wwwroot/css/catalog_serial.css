@@ -1,0 +1,578 @@
+﻿.page-container {
+    display: flex;
+    max-width: 1330px;
+    margin: 0 auto;
+    gap: 30px;
+    min-height: 80vh;
+    margin-top: 40px;
+}
+
+.filter-sort {
+    height: fit-content;
+    flex: 1 1 220px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 0 20px 20px 20px;
+    color: #eee;
+    font-weight: 600;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+    .filter-sort:hover {
+        box-shadow: 0 0 20px rgba(0, 34, 255, 0.7);
+    }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0022FF;
+    font-size: 28px;
+}
+
+/* Стили для фильтров */
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    display: block;
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+    .filter-select:hover,
+    .filter-select:focus {
+        border-color: #0022FF;
+        color: #fff;
+        outline: none;
+    }
+
+.year-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.year-input {
+    flex: 1;
+    padding: 8px 12px;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+    .year-input:focus {
+        border-color: #0022FF;
+        outline: none;
+    }
+
+.year-separator {
+    color: #555;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.apply-filters-btn {
+    flex: 2;
+    padding: 8px 12px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+    .apply-filters-btn:hover {
+        border-color: #0022FF;
+        color: #0022FF;
+        background-color: #3a3a3a;
+    }
+
+.reset-filters-btn {
+    flex: 1;
+    padding: 8px 12px;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #aaa;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+    .reset-filters-btn:hover {
+        border-color: #ff4444;
+        color: #ff4444;
+        background-color: #2a2a2a;
+    }
+
+.active-filters {
+    min-height: 30px;
+    font-size: 14px;
+    color: #0022FF;
+    padding: 5px;
+    border-top: 1px solid #333;
+}
+
+.sorting {
+    margin-top: 20px;
+}
+
+.sort-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+    .sort-btn:hover {
+        border-color: #0022FF;
+        color: #0022FF;
+    }
+
+    .sort-btn.active {
+        background-color: #0022FF;
+        color: white;
+        border-color: #0022FF;
+    }
+
+/* Стили для поиска в хедере */
+.search-container {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+    position: relative;
+    z-index: 100;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border: 1px solid #555;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+    .search-input:focus {
+        border-color: #0022FF;
+        box-shadow: 0 0 10px rgba(0, 34, 255, 0.5);
+        outline: none;
+    }
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    pointer-events: none;
+}
+
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+    .search-suggestions.active {
+        display: block;
+    }
+
+.suggestion-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #333;
+}
+
+    .suggestion-item:last-child {
+        border-bottom: none;
+    }
+
+    .suggestion-item:hover {
+        background-color: #0022FF;
+    }
+
+    .suggestion-item .suggestion-title {
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .suggestion-item .suggestion-year {
+        font-size: 12px;
+        color: #999;
+        margin-left: 10px;
+    }
+
+    .suggestion-item:hover .suggestion-year {
+        color: #ddd;
+    }
+
+.series-list {
+    flex: 4 1 1200px;
+}
+
+.page-title {
+    color: #0022FF;
+    font-size: 86px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -30px;
+}
+
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* СТИЛЬ КАРТОЧЕК */
+.series-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 34, 255, 0.1);
+    transition: box-shadow 0.3s ease;
+    height: 520px;
+    background-color: #1a1a1a;
+}
+
+    .series-card:hover {
+        box-shadow: 0 6px 30px rgba(0, 34, 255, 0.7);
+    }
+
+    .series-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.7);
+        transition: filter 0.35s ease;
+    }
+
+    .series-card:hover img {
+        filter: brightness(0.9);
+    }
+
+/* Кнопка избранного (сердечко) - Сценарий 4 */
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 30;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 18px;
+}
+
+    .favorite-btn:hover {
+        transform: scale(1.1);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .favorite-btn.active {
+        background-color: #ff4444;
+        border-color: #ff4444;
+        color: white;
+    }
+
+    .favorite-btn i {
+        pointer-events: none;
+    }
+
+.series-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.series-title {
+    font-size: 34px;
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Убрал подъем названия при наведении */
+.series-card:hover .series-title {
+    transform: translateY(0);
+}
+
+/* Убрал появление краткого описания при наведении */
+.series-desc {
+    display: none;
+}
+
+.series-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+    .series-meta p {
+        background: rgba(211, 6, 88, 0.4);
+        padding: 6px 8px;
+        border-radius: 10px;
+        width: fit-content;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+/* Сценарий 3: Окно с доп информацией при наведении - теперь внизу карточки */
+.series-hover-card {
+    position: absolute;
+    bottom: 230px; /* Располагаем над нижней частью карточки */
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px solid #0022FF;
+    border-radius: 15px;
+    padding: 20px;
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(0, 34, 255, 0.7);
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transform-origin: bottom center;
+}
+
+.series-card:hover .series-hover-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+}
+
+.hover-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+    .hover-rating i {
+        color: #ffd700;
+    }
+
+    .hover-rating span {
+        font-weight: 700;
+        color: #ffd700;
+    }
+
+.hover-description {
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+    .hover-description::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .hover-description::-webkit-scrollbar-track {
+        background: #333;
+    }
+
+    .hover-description::-webkit-scrollbar-thumb {
+        background: #0022FF;
+        border-radius: 5px;
+    }
+
+.hover-cast {
+    font-size: 13px;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+}
+
+    .hover-cast span {
+        color: #0022FF;
+        font-weight: 500;
+    }
+
+/* Уведомление для избранного - в правом верхнем углу */
+.favorite-toast {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background-color: #0022FF;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 34, 255, 0.5);
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2000;
+}
+
+    .favorite-toast.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .favorite-toast i {
+        font-size: 20px;
+        color: #ff4444;
+    }
+
+    .favorite-toast span {
+        font-weight: 500;
+    }
+
+/* Стиль для пустого результата */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    color: #aaa;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 1px dashed #555;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .page-container {
+        flex-direction: column;
+    }
+
+    .filter-sort {
+        width: 100%;
+    }
+
+    .search-container {
+        margin: 10px 0;
+        max-width: 100%;
+    }
+}
+/* Заголовок с кнопкой добавления */
+.series-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+    .series-header .page-title {
+        margin-bottom: 0;
+    }
+
+.btn-add-series {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #0022FF, #0011AA);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn-add-series:hover {
+        background: #D30658;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(211, 6, 88, 0.4);
+    }
+
+    .btn-add-series i {
+        font-size: 14px;
+    }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .series-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-add-series {
+        justify-content: center;
+    }
+}

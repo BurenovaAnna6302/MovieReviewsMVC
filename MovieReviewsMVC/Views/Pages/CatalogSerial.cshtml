@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Сериалы - каталог новинок и обзор кино. ПОЗНАНИЕ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/catalog_serial.css" />
+}
+
+<main>
+    <div class="page-container">
+        <aside class="filter-sort">
+            <!-- Фильтры -->
+            <div class="filters">
+                <p class="section-title">Фильтры</p>
+
+                <!-- Фильтр по жанру -->
+                <div class="filter-group">
+                    <label class="filter-label">Жанр:</label>
+                    <select class="filter-select" id="genreFilter">
+                        <option value="all">Все жанры</option>
+                    </select>
+                </div>
+
+                <!-- Фильтр по году (диапазон) -->
+                <div class="filter-group">
+                    <label class="filter-label">Год выпуска:</label>
+                    <div class="year-range">
+                        <input type="number" class="year-input" id="yearFrom" placeholder="От" min="1990" max="2025" value="1990">
+                        <span class="year-separator">—</span>
+                        <input type="number" class="year-input" id="yearTo" placeholder="До" min="1990" max="2025" value="2025">
+                    </div>
+                </div>
+
+                <!-- Фильтр по языку -->
+                <div class="filter-group">
+                    <label class="filter-label">Язык:</label>
+                    <select class="filter-select" id="languageFilter">
+                        <option value="all">Все языки</option>
+                    </select>
+                </div>
+
+                <!-- Только кнопка Сбросить -->
+                <div class="filter-buttons">
+                    <button class="reset-filters-btn" id="resetFiltersBtn">Сбросить фильтры</button>
+                </div>
+            </div>
+
+            <div class="sorting">
+                <p class="section-title">Сортировка</p>
+                <button class="sort-btn" data-sort="new">Сначала новые</button>
+                <button class="sort-btn" data-sort="old">Сначала старые</button>
+                <button class="sort-btn" data-sort="alphabet">В алфавитном порядке</button>
+                <button class="sort-btn" data-sort="best">Лучшие</button>
+                <button class="sort-btn" data-sort="worst">Худшие</button>
+            </div>
+        </aside>
+
+        <div class="series-list">
+            <div class="series-header">
+                <p class="page-title">Сериалы</p>
+                <!-- Кнопка добавления сериала -->
+                <a href="/Pages/AddSeries" class="btn-add-series">
+                    <i class="fas fa-plus"></i> Добавить сериал
+                </a>
+            </div>
+
+            <div class="series-grid" id="seriesGrid">
+                <div class="loading">Загрузка сериалов...</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Уведомление для избранного -->
+<div class="favorite-toast" id="favoriteToast">
+    <i class="fas fa-heart"></i>
+    <span id="toastMessage">Сериал добавлен в избранное</span>
+</div>
+
+@section Scripts {
+    <script src="/js/catalog_serial.js"></script>
+}

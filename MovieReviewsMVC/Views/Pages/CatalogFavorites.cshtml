@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Избранное - ПОЗНАНИЕ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/catalog_favorites.css" />
+}
+
+<main>
+    <div class="page-container">
+        <div class="favorites-header">
+            <h1 class="page-title">Избранное</h1>
+        </div>
+
+        <div class="favorites-list">
+            <div class="favorites-grid" id="favoritesGrid">
+                <div class="loading">Загрузка избранного...</div>
+            </div>
+        </div>
+
+        <!-- Пустое состояние (показывается, когда избранное пусто) -->
+        <div class="empty-favorites" id="emptyFavorites" style="display: none;">
+            <i class="fas fa-heart"></i>
+            <h2>У вас пока нет избранного</h2>
+            <p>Добавляйте фильмы и сериалы в избранное, и они появятся здесь</p>
+            <a href="/Pages/CatalogSerial" class="btn-catalog">Перейти в каталог сериалов</a>
+        </div>
+    </div>
+</main>
+
+<!-- Уведомление -->
+<div class="favorite-toast" id="favoriteToast">
+    <i class="fas fa-heart"></i>
+    <span id="toastMessage">Сериал удален из избранного</span>
+</div>
+
+@section Scripts {
+    <script src="/js/catalog_favorites.js"></script>
+}

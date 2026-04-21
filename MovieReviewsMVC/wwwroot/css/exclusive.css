@@ -1,0 +1,99 @@
+﻿.ex-title {
+    font-family: 'Secession Bold Alt Caps', serif;
+    font-size: 72px;
+    text-align: center;
+    color: #0022FF;
+    margin: 40px 0 50px 0;
+    user-select: none;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.exclusive-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+}
+
+.video-preview {
+    flex: 1 1 200px;
+    height: 350px;
+    border-radius: 15px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 34, 255, 0.7);
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px 20px;
+}
+
+.video-title {
+    font-family: 'Secession Bold Alt Caps', serif;
+    font-size: 28px;
+    color: white;
+    text-shadow: 0 0 5px rgb(0 0 0 / 0.6);
+}
+
+.btn-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(211, 6, 88, 0.8);
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+    .btn-play::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        border-style: solid;
+        border-width: 12px 0 12px 22px;
+        border-color: transparent transparent transparent white;
+    }
+
+.exclusive-description {
+    flex: 1 1 400px;
+    color: white;
+    font-family: 'Domine', serif;
+    user-select: text;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.desc-label {
+    font-family: 'Secession Bold Alt Caps', serif;
+    font-size: 28px;
+    color: #fff;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    letter-spacing: 1px;
+}
+
+.desc-type {
+    font-family: 'Secession Bold Alt Caps', serif;
+    font-size: 24px;
+    color: #D30658;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+.desc-text {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #ccc;
+    text-align: justify;
+}

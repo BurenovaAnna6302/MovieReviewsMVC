@@ -1,0 +1,244 @@
+﻿@{
+    ViewData["Title"] = "Лучшие подборки фильмов - рейтинги, обзоры, интервью. ПОЗНАНИЕ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles {
+    <link rel="stylesheet" href="/css/index.css" />
+}
+<!-- Кнопка возврата наверх -->
+<button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- TOP BLOCK -->
+<div class="top-block">
+    <!-- Интервью -->
+    <div class="interview-block">
+        <p class="interview-title">ЭКСКЛЮЗИВНЫЕ ИНТЕРВЬЮ</p>
+
+        <div class="interview-item">
+            <div class="video-container">
+                <div class="video-preview" data-src="https://rutube.ru/play/embed/f5e81b21b59eca46d9e987c72fb4cf1d/">
+                    <img src="~/img/уэнсдей_интервью.png"
+                         onerror="this.src='~/img/placeholder.png';"
+                         alt="Уэнсдей 2 интервью"
+                         class="preview-image" />
+                    <div class="video-overlay">
+                        <button class="play-fullscreen-btn" data-src="https://rutube.ru/play/embed/f5e81b21b59eca46d9e987c72fb4cf1d/">
+                            <i class="fas fa-play"></i> Смотреть интервью
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p class="title_int">Уэнсдей 2, интервью от 21 авг. 2025</p>
+            <p>Уэнсдэй: 2 СЕЗОН. Эксклюзивные интервью с актерами и режиссером!</p>
+        </div>
+
+        <div class="interview-item">
+            <div class="video-container">
+                <div class="video-preview" data-src="https://rutube.ru/play/embed/82f501ee5d16ad7665ddf2b50125799d">
+                    <img src="~/img/леон.webp"
+                         onerror="this.src='~/img/placeholder.png';"
+                         alt="Леон Кемстач интервью"
+                         class="preview-image" />
+                    <div class="video-overlay">
+                        <button class="play-fullscreen-btn" data-src="https://rutube.ru/play/embed/82f501ee5d16ad7665ddf2b50125799d">
+                            <i class="fas fa-play"></i> Смотреть интервью
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p class="title_int">Леон Кемстач - о «Слове пацана», карьере певца и Голливуде</p>
+            <p>Леон Кемстач о жизни после сериала, о словах Никиты Кологривого про блат, какую роль мечтает сыграть и с кем из режиссеров поработать.</p>
+        </div>
+    </div>
+
+    <!-- Слайдер -->
+    <div class="slider-block">
+        <div class="slider-container">
+            <div class="slide active">
+                <img src="~/img/posters/аватар_пламя_и_пепел.jpg" onerror="this.src='~/img/placeholder.png';" alt="Аватар: Пламя и пепел" class="slider-bg" />
+                <div class="slider-content">
+                    <p class="title_slider">АВАТАР: ПЛАМЯ И ПЕПЕЛ</p>
+                    <p class="slider-desc">
+                        Джейк Салли, Нейтири и их дети переживают смерть Нетейама.
+                        Противостояние с корпорацией RDA обостряется, и теперь семье предстоит
+                        столкнуться с враждебным племенем Нави во главе с Варанг.
+                    </p>
+                    <p class="slider-meta">2025 Фантастика IMDb 8.5</p>
+                    <div class="slider-actions">
+                        <button class="btn watch-trailer">Смотреть трейлер</button>
+                        <button class="btn more-info">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="~/img/posters/f1.jpg" onerror="this.src='~/img/placeholder.png';" alt="Формула 1" class="slider-bg" />
+                <div class="slider-content">
+                    <p class="title_slider">ФОРМУЛА 1</p>
+                    <p class="slider-desc">
+                        Захватывающая драма о мире автогонок. Борьба за чемпионский титул,
+                        интриги команд и личные драмы пилотов на фоне самых престижных трасс мира.
+                    </p>
+                    <p class="slider-meta">2024 Драма IMDb 8.2</p>
+                    <div class="slider-actions">
+                        <button class="btn watch-trailer">Смотреть трейлер</button>
+                        <button class="btn more-info">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="~/img/posters/балерина.jpg" onerror="this.src='~/img/placeholder.png';" alt="Балерина" class="slider-bg" />
+                <div class="slider-content">
+                    <p class="title_slider">БАЛЕРИНА</p>
+                    <p class="slider-desc">
+                        История молодой балерины, стремящейся к вершинам мирового балета.
+                        Ей предстоит пройти через боль, жертвы и испытания ради своей мечты.
+                    </p>
+                    <p class="slider-meta">2024 Драма IMDb 7.9</p>
+                    <div class="slider-actions">
+                        <button class="btn watch-trailer">Смотреть трейлер</button>
+                        <button class="btn more-info">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-nav">
+            <button class="slider-arrow prev-arrow">‹</button>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+            <button class="slider-arrow next-arrow">›</button>
+        </div>
+    </div>
+</div>
+
+<!-- Блок Лучшее -->
+<div class="best-block">
+    <p class="best-title">ЛУЧШЕЕ</p>
+    <div class="best-carousel-wrapper">
+        <div class="best-carousel">
+            <button class="carousel-arrow outside prev-arrow" aria-label="Предыдущий фильм">‹</button>
+            <button class="carousel-arrow outside next-arrow" aria-label="Следующий фильм">›</button>
+
+            <div class="best-carousel-container">
+                <!-- Карточки с 1 по 10 (оставляем как в оригинале) -->
+                <div class="best-item">
+                    <img src="~/img/posters/f1.jpg" onerror="this.src='~/img/placeholder.png';" alt="Формула 1" />
+                    <span class="best-number">1</span>
+                    <p class="best-name">Формула 1</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/posters/балерина.jpg" onerror="this.src='~/img/placeholder.png';" alt="Балерина" />
+                    <span class="best-number">2</span>
+                    <p class="best-name">Балерина</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/чумовая_пятница_2.jpg" onerror="this.src='~/img/placeholder.png';" alt="Чумовая пятница 2" />
+                    <span class="best-number">3</span>
+                    <p class="best-name">Чумовая пятница 2</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/posters/в_списках_не_значился.jpg" onerror="this.src='~/img/placeholder.png';" alt="В списках не значился" />
+                    <span class="best-number">4</span>
+                    <p class="best-name">В списках не значился</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/Дракула.jpg" onerror="this.src='~/img/placeholder.png';" alt="Дракула" />
+                    <span class="best-number">5</span>
+                    <p class="best-name">Дракула</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/posters/аватар_3.jpg" onerror="this.src='~/img/placeholder.png';" alt="Аватар: Пламя и пепел" />
+                    <span class="best-number">6</span>
+                    <p class="best-name">Аватар: Пламя и пепел</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/зверополис_2.jpg" onerror="this.src='~/img/placeholder.png';" alt="Зверополис 2" />
+                    <span class="best-number">7</span>
+                    <p class="best-name">Зверополис 2</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/трон_арес.jpg" onerror="this.src='~/img/placeholder.png';" alt="Трон: Арес" />
+                    <span class="best-number">8</span>
+                    <p class="best-name">Трон: Арес</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/уэнсдей_2.jpg" onerror="this.src='~/img/placeholder.png';" alt="Уэнсдей 2" />
+                    <span class="best-number">9</span>
+                    <p class="best-name">Уэнсдей 2</p>
+                </div>
+                <div class="best-item">
+                    <img src="~/img/слово_пацана.jpg" onerror="this.src='~/img/placeholder.png';" alt="Слово пацана" />
+                    <span class="best-number">10</span>
+                    <p class="best-name">Слово пацана</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Эксклюзивы -->
+<div class="exclusive-block">
+    <p class="exclusive-title">ЭКСКЛЮЗИВЫ</p>
+    <div class="exclusive-content">
+        <p class="exclusive-desc">
+            Будь в курсе всех событий киноиндустрии.
+            Эксклюзивные интервью, закулисные материалы и самые свежие новости из мира кино.
+        </p>
+        <button class="btn exclusive-btn">Подробнее</button>
+    </div>
+</div>
+
+<!-- Трейлеры -->
+<p class="trailer-title">НОВЫЕ ТРЕЙЛЕРЫ</p>
+<div class="trailers-block">
+    <div class="trailer-item">
+        <div class="video-container">
+            <div class="video-preview" data-src="https://rutube.ru/play/embed/0400e39ff879544e9d98f7af6a10f663/">
+                <img src="~/img/Дракула.jpg" onerror="this.src='~/img/placeholder.png';" alt="Дракула трейлер" class="preview-image" />
+                <div class="video-overlay">
+                    <button class="play-fullscreen-btn" data-src="https://rutube.ru/play/embed/0400e39ff879544e9d98f7af6a10f663/">
+                        <i class="fas fa-play"></i> Смотреть трейлер
+                    </button>
+                </div>
+            </div>
+        </div>
+        <p class="trailer-name">Дракула</p>
+    </div>
+
+    <div class="trailer-item">
+        <div class="video-container">
+            <div class="video-preview" data-src="https://rutube.ru/play/embed/deaa8b9aabd828ae6ba1ca6d5db6956d/">
+                <img src="~/img/трон_арес.jpg" onerror="this.src='~/img/placeholder.png';" alt="Трон: Арес трейлер" class="preview-image" />
+                <div class="video-overlay">
+                    <button class="play-fullscreen-btn" data-src="https://rutube.ru/play/embed/deaa8b9aabd828ae6ba1ca6d5db6956d/">
+                        <i class="fas fa-play"></i> Смотреть трейлер
+                    </button>
+                </div>
+            </div>
+        </div>
+        <p class="trailer-name">Трон: Арес</p>
+    </div>
+
+    <div class="trailer-item">
+        <div class="video-container">
+            <div class="video-preview" data-src="https://rutube.ru/play/embed/453d0ccf01aa9e8670cddf16b31edb68/">
+                <img src="~/img/зверополис_2.jpg" onerror="this.src='~/img/placeholder.png';" alt="Зверополис 2 трейлер" class="preview-image" />
+                <div class="video-overlay">
+                    <button class="play-fullscreen-btn" data-src="https://rutube.ru/play/embed/453d0ccf01aa9e8670cddf16b31edb68/">
+                        <i class="fas fa-play"></i> Смотреть трейлер
+                    </button>
+                </div>
+            </div>
+        </div>
+        <p class="trailer-name">Зверополис 2</p>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/index.js"></script>
+}

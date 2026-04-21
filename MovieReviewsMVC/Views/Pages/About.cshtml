@@ -1,0 +1,172 @@
+﻿@{
+    ViewData["Title"] = "Подробная информация о компании Познание, официальный сайт, контакты";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/about.css" />
+}
+
+<!-- MAIN -->
+<main class="main-content">
+    <!-- ЗАГОЛОВОК С АНИМАЦИЕЙ -->
+    <p class="title">
+        <i class="fas fa-film clapper-icon"></i>
+        Добро пожаловать в мир кино!
+    </p>
+
+    <!-- ВВОДНЫЙ БЛОК С ИЗОБРАЖЕНИЕМ -->
+    <div class="intro-with-image-left">
+        <p>
+            Кино — это не просто развлечение, это искусство, которое способно вдохновлять,
+            заставлять задуматься и открывать новые горизонты. Наша платформа создана для
+            истинных ценителей кинематографа, которые ценят качественный контент и глубокий
+            анализ произведений.
+        </p>
+    </div>
+
+    <p class="title_main">ПОЗНАНИЕ: Ваш гид в мире кинематографа</p>
+
+    <!-- ОСНОВНОЙ ТЕКСТ -->
+    <p>
+        С момента своего основания в 2010 году наша компания стремится стать мостом между
+        создателями фильмов и их зрителями. Мы верим, что каждое кинопроизведение — это
+        уникальная история, заслуживающая внимания и осмысления.
+    </p>
+
+    <!-- ТАБЛИЦА С КЛЮЧЕВЫМИ ФАКТАМИ -->
+    <table class="about-table">
+        <thead>
+            <tr>
+                <th>Год</th>
+                <th>Событие</th>
+                <th>Достижение</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2010</td>
+                <td>Основание компании</td>
+                <td>Запуск первой версии платформы</td>
+            </tr>
+            <tr>
+                <td>2015</td>
+                <td>Расширение базы данных</td>
+                <td>Более 10,000 фильмов в каталоге</td>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>Запуск мобильного приложения</td>
+                <td>1 млн+ скачиваний</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>Текущее развитие</td>
+                <td>Лидер в области кинокритики</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- СПИСОК ПРЕИМУЩЕСТВ -->
+    <p class="title2">Почему выбирают нас?</p>
+    <ul class="text_ul">
+        <li>Экспертные рецензии от профессиональных кинокритиков</li>
+        <li>Самая полная база данных о фильмах и сериалах</li>
+        <li>Эксклюзивные интервью с режиссерами и актерами</li>
+        <li>Умные рекомендации на основе ваших предпочтений</li>
+        <li>Сообщество единомышленников-киноманов</li>
+    </ul>
+
+    <!-- ЦИТАТА -->
+    <div class="quote-block">
+        <p class="blockquote">
+            "Кино — это жизнь, с которой вывели пятна скуки."
+        </p>
+        <cite class="cite">— Альфред Хичкок</cite>
+    </div>
+
+    <!-- ДОПОЛНИТЕЛЬНЫЙ РАЗДЕЛ -->
+    <p class="title2">Наша миссия</p>
+    <p>
+        Мы стремимся не просто информировать, но и образовывать наших читателей.
+        Каждая статья, каждая рецензия — это возможность глубже понять язык кино,
+        разобраться в режиссерских приемах и актерской игре. Мы помогаем нашим
+        пользователям становиться более вдумчивыми зрителями.
+    </p>
+
+    <!-- ЕЩЕ ОДИН СПИСОК -->
+    <p class="title2">Наши принципы работы</p>
+    <ul class="text_ul">
+        <li>Объективность и непредвзятость в оценках</li>
+        <li>Глубокий анализ вместо поверхностных обзоров</li>
+        <li>Уважение к разным точкам зрения</li>
+        <li>Поддержка независимого кино</li>
+        <li>Постоянное развитие и совершенствование</li>
+    </ul>
+
+    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
+    <div class="feedback-form-container">
+        <p class="form-main-title">Свяжитесь с нами</p>
+        <p class="form-subtitle">
+            если у вас есть вопросы, предложения или вы хотите сотрудничать с нами
+        </p>
+        <form class="feedback-form" id="catalog-form" action="#" method="post" novalidate>
+            <div class="form-row">
+                <div class="form-group tooltip-wrapper">
+                    <label for="first-name">Имя</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Введите имя" required data-tooltip="Имя должно начинаться с заглавной буквы и содержать только A-Za-zА-Яа-я, минимум 2 символа." />
+                    <div class="error-message" id="error-first-name"></div>
+                </div>
+                <div class="form-group tooltip-wrapper">
+                    <label for="last-name">Фамилия</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Введите фамилию" required data-tooltip="Фамилия должна начинаться с заглавной буквы и содержать только A-Za-zА-Яа-я, минимум 2 символа." />
+                    <div class="error-message" id="error-last-name"></div>
+                </div>
+                <div class="form-group tooltip-wrapper">
+                    <label for="middle-name">Отчество</label>
+                    <input type="text" id="middle-name" name="middle-name" placeholder="Введите отчество" data-tooltip="Необязательное поле. Если указываете, оно должно начинаться с заглавной буквы и содержать только A-Za-zА-Яа-я, минимум 2 символа." />
+                    <div class="error-message" id="error-middle-name"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group tooltip-wrapper">
+                    <label for="age">Возраст</label>
+                    <input type="number" id="age" name="age" placeholder="Введите возраст" required data-tooltip="Возраст должен быть целым числом от 18 до 90 лет." />
+                    <div class="error-message" id="error-age"></div>
+                </div>
+                <div class="form-group tooltip-wrapper">
+                    <label for="contact-time">Удобное время для ответа</label>
+                    <input type="text" id="contact-time" name="contact-time" placeholder="Пример: 09:00-18:00" required data-tooltip="Формат: ЧЧ:ММ-ЧЧ:ММ (00:00-23:59). Первое время&lt;второго. 24:00 не допускается - используйте 00:00" />
+                    <div class="error-message" id="error-contact-time"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group tooltip-wrapper">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 123 456 7890" required data-tooltip="Телефон в формате +7 XXX XXX XXXX (вводите только 10 цифр номера после +7)" />
+                    <div class="error-message" id="error-phone"></div>
+                </div>
+                <div class="form-group tooltip-wrapper">
+                    <label for="email">Электронная почта</label>
+                    <input type="email" id="email" name="email" placeholder="Введите адрес электронной почты" required data-tooltip="До символа @@ можно использовать только A-Za-z, цифры, ._%+-. После @@ - корректное доменное имя. Пример: example@@mail.ru" />
+                    <div class="error-message" id="error-email"></div>
+                </div>
+            </div>
+
+            <div class="form-group full-width tooltip-wrapper">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required data-tooltip="Сообщение должно содержать от 10 до 1000 символов."></textarea>
+                <div class="error-message" id="error-message"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Отправить сообщение</button>
+            <div id="submit-message" style="color: green; font-weight: 700; margin-top: 15px;"></div>
+        </form>
+    </div>
+</main>
+
+@section Scripts {
+    <script src="/js/validation.js"></script>
+}

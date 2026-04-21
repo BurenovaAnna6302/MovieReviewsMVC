@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Добавление сериала - ПОЗНАНИЕ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="/css/add_series.css" />
+}
+
+<main>
+    <div class="page-container">
+        <div class="form-header">
+            <h1 class="page-title">Добавление нового сериала</h1>
+            <p class="form-description">Заполните все обязательные поля для добавления сериала в базу данных</p>
+        </div>
+
+        <div class="form-container">
+            <form id="addSeriesForm" class="add-form" enctype="multipart/form-data">
+                <!-- Левая колонка -->
+                <div class="form-left">
+                    <div class="form-group">
+                        <label for="title" class="form-label">Название сериала <span class="required">*</span></label>
+                        <input type="text" id="title" name="title" class="form-input" placeholder="Введите название сериала" required>
+                        <div class="error-message" id="titleError"></div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="yearStart" class="form-label">Год начала <span class="required">*</span></label>
+                            <input type="number" id="yearStart" name="yearStart" class="form-input" placeholder="Год начала" min="1900" max="2025" required>
+                            <div class="error-message" id="yearStartError"></div>
+                        </div>
+
+                        <div class="form-group half">
+                            <label for="yearEnd" class="form-label">Год окончания</label>
+                            <input type="number" id="yearEnd" name="yearEnd" class="form-input" placeholder="Год окончания (оставьте пустым, если идет)" min="1900" max="2025">
+                            <div class="error-message" id="yearEndError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="genreId" class="form-label">Жанр <span class="required">*</span></label>
+                            <select id="genreId" name="genreId" class="form-select" required>
+                                <option value="" disabled selected>Выберите жанр</option>
+                            </select>
+                            <div class="error-message" id="genreError"></div>
+                        </div>
+
+                        <div class="form-group half">
+                            <label for="languageId" class="form-label">Язык <span class="required">*</span></label>
+                            <select id="languageId" name="languageId" class="form-select" required>
+                                <option value="" disabled selected>Выберите язык</option>
+                            </select>
+                            <div class="error-message" id="languageError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cast" class="form-label">В ролях <span class="required">*</span></label>
+                        <input type="text" id="cast" name="cast" class="form-input" placeholder="Введите имена актёров через запятую" required>
+                        <div class="error-message" id="castError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating" class="form-label">Рейтинг <span class="required">*</span></label>
+                        <input type="number" id="rating" name="rating" class="form-input" placeholder="0.0 - 10.0" step="0.1" min="0" max="10" required>
+                        <div class="error-message" id="ratingError"></div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка -->
+                <div class="form-right">
+                    <div class="form-group">
+                        <label for="shortDescription" class="form-label">Краткое описание <span class="required">*</span></label>
+                        <textarea id="shortDescription" name="shortDescription" class="form-textarea" placeholder="Введите краткое описание (1-2 предложения)" rows="3" required></textarea>
+                        <div class="error-message" id="shortDescriptionError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullDescription" class="form-label">Полное описание <span class="required">*</span></label>
+                        <textarea id="fullDescription" name="fullDescription" class="form-textarea" placeholder="Введите подробное описание сериала" rows="4" required></textarea>
+                        <div class="error-message" id="fullDescriptionError"></div>
+                    </div>
+
+                    <!-- Поле для загрузки файла -->
+                    <div class="form-group">
+                        <label for="posterImage" class="form-label">Постер <span class="required">*</span></label>
+                        <input type="file" id="posterImage" name="posterImage" class="form-input" accept="image/jpeg,image/jpg,image/png,image/webp" required>
+                        <div class="error-message" id="posterImageError"></div>
+                        <small style="color: #aaa; display: block; margin-top: 5px;">
+                            Поддерживаемые форматы: JPG, PNG, WEBP. Максимальный размер: 5 МБ
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <div class="action-buttons">
+                        <button type="button" class="btn-cancel" onclick="window.location.href='/Pages/CatalogSerial'">
+                            <i class="fas fa-times"></i> Отмена
+                        </button>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-plus"></i> Добавить сериал
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    <script src="/js/add_series.js"></script>
+}
