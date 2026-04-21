@@ -7,7 +7,7 @@
     padding: 0 20px;
 }
 
-/* Заголовок страницы */
+/* Заголовок страницы - теперь p вместо h1 */
 .page-title {
     color: #0022FF;
     font-size: 86px;
@@ -33,7 +33,7 @@
     margin-bottom: 40px;
 }
 
-/* КАРТОЧКА ИЗБРАННОГО - ТОЧНО КАК В КАТАЛОГЕ */
+/* КАРТОЧКА ИЗБРАННОГО */
 .favorite-card {
     position: relative;
     border-radius: 14px;
@@ -63,7 +63,7 @@
         filter: brightness(0.9);
     }
 
-/* Кнопка удаления - стилизуем под кнопку избранного из каталога */
+/* Кнопка удаления */
 .remove-favorite-btn {
     position: absolute;
     top: 15px;
@@ -100,7 +100,7 @@
     font-size: 18px;
 }
 
-/* Контент карточки - КАК В КАТАЛОГЕ */
+/* Контент карточки */
 .favorite-content {
     position: absolute;
     bottom: 0;
@@ -126,12 +126,12 @@
     transform: translateY(0);
 }
 
-/* Описание скрыто как в каталоге */
+/* Описание скрыто */
 .favorite-desc {
     display: none;
 }
 
-/* Мета информация - ТОЧНО КАК В КАТАЛОГЕ */
+/* Мета информация */
 .favorite-meta {
     display: flex;
     flex-direction: column;
@@ -149,12 +149,11 @@
         margin-top: 0;
     }
 
-    /* Убираем иконки из мета-информации */
     .favorite-meta i {
         display: none;
     }
 
-/* Окно с доп информацией - КАК В КАТАЛОГЕ */
+/* Окно с доп информацией */
 .favorite-hover-card {
     position: absolute;
     bottom: 230px;
@@ -239,7 +238,7 @@
     margin-top: 5px;
 }
 
-/* Пустое состояние - ТОЛЬКО ТЕКСТ, БЕЗ ПРЯМОУГОЛЬНИКА */
+/* Пустое состояние - теперь с p вместо h2 */
 .empty-favorites {
     text-align: center;
     padding: 80px 20px;
@@ -253,7 +252,7 @@
         opacity: 0.5;
     }
 
-    .empty-favorites h2 {
+    .empty-favorites .empty-title {
         font-family: 'Domine', serif;
         font-size: 28px;
         color: #333;
@@ -261,7 +260,7 @@
         font-weight: 700;
     }
 
-    .empty-favorites p {
+    .empty-favorites .empty-text {
         color: #666;
         font-size: 18px;
         margin-bottom: 30px;
@@ -287,31 +286,7 @@
         box-shadow: 0 10px 25px rgba(0, 34, 255, 0.3);
     }
 
-/* Загрузка и ошибки */
-.loading {
-    text-align: center;
-    padding: 60px 20px;
-    color: #0022FF;
-    font-size: 18px;
-    grid-column: 1 / -1;
-    font-weight: 600;
-}
-
-    .loading:after {
-        content: '...';
-        animation: dots 1.5s steps(4, end) infinite;
-    }
-
-.error {
-    text-align: center;
-    padding: 60px 20px;
-    color: #f44336;
-    font-size: 18px;
-    grid-column: 1 / -1;
-    font-weight: 600;
-}
-
-/* Уведомление - КАК В КАТАЛОГЕ */
+/* Уведомление - теперь с p вместо span */
 .favorite-toast {
     position: fixed;
     top: 100px;
@@ -340,9 +315,35 @@
         color: #ff4444;
     }
 
-    .favorite-toast span {
+    .favorite-toast .toast-message {
         font-weight: 500;
+        margin: 0;
+        color: white;
     }
+
+/* Загрузка и ошибки */
+.loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: #0022FF;
+    font-size: 18px;
+    grid-column: 1 / -1;
+    font-weight: 600;
+}
+
+    .loading:after {
+        content: '...';
+        animation: dots 1.5s steps(4, end) infinite;
+    }
+
+.error {
+    text-align: center;
+    padding: 60px 20px;
+    color: #f44336;
+    font-size: 18px;
+    grid-column: 1 / -1;
+    font-weight: 600;
+}
 
 /* Анимации */
 @keyframes fadeIn {
@@ -383,7 +384,7 @@
     }
 }
 
-/* Адаптивность для планшетов */
+/* Адаптивность */
 @media (max-width: 1024px) {
     .page-title {
         font-size: 64px;
@@ -399,7 +400,6 @@
     }
 }
 
-/* Адаптивность для мобильных */
 @media (max-width: 768px) {
     .page-container {
         flex-direction: column;
@@ -451,11 +451,11 @@
             font-size: 60px;
         }
 
-        .empty-favorites h2 {
+        .empty-favorites .empty-title {
             font-size: 24px;
         }
 
-        .empty-favorites p {
+        .empty-favorites .empty-text {
             font-size: 16px;
         }
 
@@ -477,7 +477,6 @@
         }
 }
 
-/* Адаптивность для маленьких телефонов */
 @media (max-width: 480px) {
     .page-title {
         font-size: 32px;

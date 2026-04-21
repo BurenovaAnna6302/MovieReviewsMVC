@@ -1,4 +1,4 @@
-﻿// catalog_favorites.js - ДЛЯ ASP.NET CORE MVC
+﻿// catalog_favorites.js - ДЛЯ ASP.NET CORE MVC (с BLOB картинками)
 
 const API_BASE_URL = '/api/seriesapi';
 
@@ -80,11 +80,8 @@ function createFavoriteCard(item) {
     card.className = 'favorite-card';
     card.setAttribute('data-id', item.id);
 
-    // Формируем путь к постеру
-    let posterPath = '/img/placeholder.png';
-    if (item.posterUrl) {
-        posterPath = item.posterUrl.startsWith('/') ? item.posterUrl : '/' + item.posterUrl;
-    }
+    // ВАЖНО: картинка получается через API эндпоинт /image/{id}
+    const posterPath = `${API_BASE_URL}/image/${item.id}`;
 
     // Формируем годы
     const years = item.yearEnd ? `${item.yearStart}-${item.yearEnd}` : `${item.yearStart}`;

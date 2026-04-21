@@ -421,3 +421,11 @@
     }
 }
 
+.page-title {
+    color: #0022FF;
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: 'Domine', serif;
+    text-align: center;
+}

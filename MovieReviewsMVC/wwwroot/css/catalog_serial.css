@@ -576,3 +576,177 @@
         justify-content: center;
     }
 }
+/* Дополнительные стили: замена span на p и другие исправления */
+
+/* Стиль для разделителя года (был span) */
+.year-separator {
+    color: #555;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Стиль для сообщения в уведомлении (был span) */
+.toast-message {
+    font-weight: 500;
+    margin: 0;
+    color: white;
+}
+
+/* Стили для фильтров (обновлённые) */
+.filter-sort {
+    height: fit-content;
+    flex: 1 1 220px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 0 20px 20px 20px;
+    color: #eee;
+    font-weight: 600;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+    .filter-sort:hover {
+        box-shadow: 0 0 20px rgba(0, 34, 255, 0.7);
+    }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0022FF;
+    font-size: 28px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    display: block;
+    font-size: 16px;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.filter-select {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+    .filter-select:hover,
+    .filter-select:focus {
+        border-color: #0022FF;
+        color: #fff;
+        outline: none;
+    }
+
+.year-range {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.year-input {
+    flex: 1;
+    padding: 8px 12px;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.95rem;
+}
+
+    .year-input:focus {
+        border-color: #0022FF;
+        outline: none;
+    }
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.reset-filters-btn {
+    flex: 1;
+    padding: 8px 12px;
+    background-color: #222;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #aaa;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+    .reset-filters-btn:hover {
+        border-color: #ff4444;
+        color: #ff4444;
+        background-color: #2a2a2a;
+    }
+
+.sorting {
+    margin-top: 20px;
+}
+
+.sort-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 1px solid #555;
+    border-radius: 7px;
+    color: #ddd;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+    .sort-btn:hover {
+        border-color: #0022FF;
+        color: #0022FF;
+    }
+
+    .sort-btn.active {
+        background-color: #0022FF;
+        color: white;
+        border-color: #0022FF;
+    }
+
+/* Стили для уведомления */
+.favorite-toast {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background-color: #0022FF;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0, 34, 255, 0.5);
+    transform: translateX(400px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2000;
+}
+
+    .favorite-toast.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .favorite-toast i {
+        font-size: 20px;
+        color: #ff4444;
+    }

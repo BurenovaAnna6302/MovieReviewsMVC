@@ -10,7 +10,7 @@
 <main>
     <div class="page-container">
         <div class="favorites-header">
-            <h1 class="page-title">Избранное</h1>
+            <p class="page-title">Избранное</p>
         </div>
 
         <div class="favorites-list">
@@ -22,8 +22,8 @@
         <!-- Пустое состояние (показывается, когда избранное пусто) -->
         <div class="empty-favorites" id="emptyFavorites" style="display: none;">
             <i class="fas fa-heart"></i>
-            <h2>У вас пока нет избранного</h2>
-            <p>Добавляйте фильмы и сериалы в избранное, и они появятся здесь</p>
+            <p class="empty-title">У вас пока нет избранного</p>
+            <p class="empty-text">Добавляйте фильмы и сериалы в избранное, и они появятся здесь</p>
             <a href="/Pages/CatalogSerial" class="btn-catalog">Перейти в каталог сериалов</a>
         </div>
     </div>
@@ -32,7 +32,7 @@
 <!-- Уведомление -->
 <div class="favorite-toast" id="favoriteToast">
     <i class="fas fa-heart"></i>
-    <span id="toastMessage">Сериал удален из избранного</span>
+    <p class="toast-message" id="toastMessage">Сериал удален из избранного</p>
 </div>
 
 @section Scripts {
